@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Mortgage Calculator</title>
+</head>
+<body>
+    <!-- if we want to do a navbar later -->
+    <!-- <nav>
+
+    </nav> -->
+    <div class="container">
+      <main class="calc-sheet">
+        <h1>Mortgage Calculator</h1>
+        <div class="modal"></div>
+        <!-- Form Begin -->
+        <form onsubmit="submit()" class="submit-form">
+          <h2>Calc Sheet</h2>
+          <label >
+            <h3>Name:</h3>
+            <input 
+              type="text"
+              name="client"
+              class="client"
+              required
+            >
+          </label>
+          <label >
+            <h3>Loan Amount:</h3>
+          </label>
+          <input 
+            class="loan"
+            type="number"
+            name="loan"
+          >
+          <div class="radio">
+            <h3>Interest Rate: </h3>
+            <input class="interest" type="radio" value="4%" name="interest">
+            <label for="interest">
+              4%
+            </label>
+            <input class="interest" type="radio" value="5%" name="interest">
+            <label for="interest">
+              5%
+            </label>
+            <input class="interest" type="radio" value="6%" name="interest">
+            <label for="interest">
+              6%
+            </label>
+          </div>
+          <!-- br is for an extra space between radio button and downpayment -->
+          <br>
+          <div>
+            <label for="">Down Payment:</label>
+            $<input 
+              class="downpayment"
+              type="number"
+            >
+          </div>
+          <div class="select">
+            <h3>Loan Term</h3>
+            <select name="term" id="">
+              <option value="30">30 Years</option>
+              <option value="15">15 Years</option>
+  
+            </select>
+          </div>
+          <!--  -->
+          <br>
+  
+          <button 
+            class="btn submit" 
+            type="button"
+            >
+            Submit</button>
+        </form>
+      </main>
+
+      <!-- MODAL INFORMATION -->
+      <div class="popup">
+        <h2>Results</h2>
+        <div class="results">
+          <p class="client-name"></p>
+          <p class="loan-amount"></p>
+          <p class="int-rate"></p>
+          <p class="down-payment"></p>
+        </div>
+        
+        <button 
+          type="button"
+          class="approve"
+          >
+          Approve
+        </button>
+        <button 
+          type="button"
+          onclick="closePopup()"
+          >
+          Decline
+        </button>
+      </div>
+    </div>
+
+  <script src="script.js" ></script>
+</body>
+</html>
